@@ -34,6 +34,9 @@ class CategoryProvider extends ChangeNotifier {
   }
 
   Future<void> deleteCategory(int id) async {
+    if(id==-50){
+      return;
+    }
     final index = categories.indexWhere(
       (element) => element.id == id,
     );
