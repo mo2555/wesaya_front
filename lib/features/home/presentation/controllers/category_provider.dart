@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:wesaya/core/helpers/app_helper.dart';
@@ -34,7 +33,7 @@ class CategoryProvider extends ChangeNotifier {
   }
 
   Future<void> deleteCategory(int id) async {
-    if(id==-50){
+    if (id == -50) {
       return;
     }
     final index = categories.indexWhere(
@@ -67,7 +66,9 @@ class CategoryProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> addCategory(CategoryModel model) async {
+  Future<void> addCategory(
+    CategoryModel model,
+  ) async {
     final index = categories.length;
     categories.add(
       model,
